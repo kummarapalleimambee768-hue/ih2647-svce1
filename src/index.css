@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sans-font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --heading-font: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --gradient-hero: linear-gradient(135deg, #fff1f4 0%, #fdfbf7 50%, #f3f0fe 100%);
+    --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.75) 100%);
+  }
+
+  body {
+    font-family: var(--sans-font);
+    background-color: #FFFDF9;
+    color: #1E293B;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--heading-font);
+  }
+}
+
+/* Glassmorphism, animations and glow utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel-elevated {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 63, 110, 0.12);
+  box-shadow: 0 10px 35px -5px rgba(244, 63, 110, 0.08), 0 4px 12px -2px rgba(152, 114, 238, 0.05);
+}
+
+.hero-gradient {
+  background: var(--gradient-hero);
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fdfaf2;
+}
+::-webkit-scrollbar-thumb {
+  background: #fda4b6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f43f6e;
+}
