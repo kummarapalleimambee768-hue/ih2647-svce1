@@ -14,6 +14,7 @@ import {
   ShieldAlert
 } from 'lucide-react';
 import { EmergencyModal } from '../components/EmergencyModal';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 const COMMON_SYMPTOMS = [
   'Morning Nausea',
@@ -91,7 +92,7 @@ export const SymptomTrackerPage: React.FC = () => {
     setAlertWarning(null);
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 animate-fadeIn">
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -335,5 +336,5 @@ export const SymptomTrackerPage: React.FC = () => {
         onClose={() => setEmergencyModalOpen(false)}
       />
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

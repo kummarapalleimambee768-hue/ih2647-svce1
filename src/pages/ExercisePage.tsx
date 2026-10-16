@@ -26,6 +26,7 @@ import {
   X
 } from 'lucide-react';
 import { VoiceAssistantModal } from '../components/VoiceAssistantModal';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const ExercisePage: React.FC = () => {
   const { t } = useTranslation();
@@ -73,7 +74,7 @@ export const ExercisePage: React.FC = () => {
       : ex.trimesterApplicability.includes(selectedTrimester as 1 | 2 | 3)
   );
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-8 animate-fadeIn max-w-6xl mx-auto">
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-slate-200/80">
@@ -422,5 +423,5 @@ export const ExercisePage: React.FC = () => {
         onClose={() => setVoiceModalOpen(false)}
       />
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

@@ -12,6 +12,7 @@ import {
   HelpCircle,
   AlertCircle
 } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const AppointmentsPage: React.FC = () => {
   const { t } = useTranslation();
@@ -60,7 +61,7 @@ export const AppointmentsPage: React.FC = () => {
     setQuestionsInput('');
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 animate-fadeIn">
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -320,5 +321,5 @@ export const AppointmentsPage: React.FC = () => {
         )}
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

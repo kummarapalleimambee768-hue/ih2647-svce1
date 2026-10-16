@@ -22,6 +22,7 @@ import {
   Mic,
   Download
 } from 'lucide-react';
+import { LocalizedCopy } from './LocalizedCopy';
 
 export const Navbar: React.FC = () => {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ export const Navbar: React.FC = () => {
     { to: '/medical-history', label: t('nav.medicalHistory', 'Medical History'), icon: FileText },
   ];
 
-  return (
+  return <LocalizedCopy>{((
     <>
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-rose-100 shadow-sm transition-all">
         {/* Urgent Emergency Protocol Banner */}
@@ -252,5 +253,5 @@ export const Navbar: React.FC = () => {
       {/* Voice Assistant Modal */}
       <VoiceAssistantModal isOpen={voiceOpen} onClose={() => setVoiceOpen(false)} />
     </>
-  );
+  ))}</LocalizedCopy>;
 };

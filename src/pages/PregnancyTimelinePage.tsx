@@ -15,6 +15,7 @@ import {
   ShieldCheck,
   CheckCircle2
 } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const PregnancyTimelinePage: React.FC = () => {
   const { currentPregnancy } = useApp();
@@ -29,7 +30,7 @@ export const PregnancyTimelinePage: React.FC = () => {
     { num: 3, label: 'Trimester 3 (W 28–40)', range: [28, 32, 36, 40] },
   ];
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 animate-fadeIn">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -229,5 +230,5 @@ export const PregnancyTimelinePage: React.FC = () => {
         </div>
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

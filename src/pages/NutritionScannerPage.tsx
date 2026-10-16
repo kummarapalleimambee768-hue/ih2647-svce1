@@ -30,6 +30,7 @@ import {
   ThumbsUp,
   AlertOctagon
 } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const NutritionScannerPage: React.FC = () => {
   const { t } = useTranslation();
@@ -145,7 +146,7 @@ export const NutritionScannerPage: React.FC = () => {
       )
     : [];
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 animate-fadeIn">
       {/* Title */}
       <div>
@@ -533,5 +534,5 @@ export const NutritionScannerPage: React.FC = () => {
         </div>
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

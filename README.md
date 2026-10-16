@@ -1,130 +1,141 @@
-# Mom Journey AI — Full-Stack Maternal Wellness & Pregnancy Care Companion
+# Mom Journey AI
 
-**Mom Journey AI** is a production-ready, full-stack pregnancy care and maternal wellness web application designed for expecting mothers. It combines evidence-based obstetric protocols (ACOG & WHO standards), a certified AI Indian food nutrition scanner, a dedicated Safe Exercises engine with 4 core routines and trimester filters, a voice recognition assistant, and multi-language support (English, Telugu, Hindi, Tamil, Kannada).
+Mom Journey AI is a maternal wellness and pregnancy companion built with React, TypeScript, and Vite. It brings pregnancy tracking, wellness tools, and educational guidance together in one responsive web app.
 
----
+> **Important:** This project provides educational and organizational support, not medical diagnosis, treatment, or emergency triage. Always consult a qualified clinician. The included accounts and records are demonstration data.
 
-## 🌟 Key Features
+## Features
 
-### 1. Modern Maternal Dashboard
-- **Gestational Age & EDD Tracker**: Accurate due date calculation using standard obstetric formulas ($\text{LMP} + 280\text{ days}$).
-- **Baby Development Milestone**: Visual fruit/vegetable size comparisons (e.g. Corn on the Cob / Papaya at 24 weeks).
-- **Streamlined Navigation**: Clean card layout, direct tactile actions, and no clutter.
+### Pregnancy dashboard and timeline
 
-### 2. Dedicated Safe Exercises Page (`/exercise`)
-- **Four Core Evidence-Based Routines**:
-  - **Gentle Walking** — *20–30 minutes*
-  - **Prenatal Yoga** — *15–20 minutes*
-  - **Swimming & Water Aerobics** — *20–30 minutes*
-  - **Kegel / Pelvic Floor Exercises** — *5–10 minutes*
-- **Trimester Filters**: Instant filtering for All Trimesters, 1st Trimester (W 1–13), 2nd Trimester (W 14–27), and 3rd Trimester (W 28–40).
-- **Interactive "Learn More" Modals**: Step-by-step guidance, trimester adjustments, benefits, and safety precautions.
-- **Three Core Safety Tips**:
-  - *Hydration Protocol* (2.5L+ daily water intake)
-  - *Overheating Prevention* (keep core temperature $< 38.3^\circ\text{C} / 101^\circ\text{F}$)
-  - *Listening to Your Body* (maternal "Talk Test" and warning signs)
-- **Downloadable Guide**: Instant download of `Mom_Journey_Safe_Exercises_Guide.txt`.
+- View pregnancy week, trimester, estimated due date, days remaining, and a 40-week progress indicator.
+- Explore week-by-week fetal development milestones, maternal changes, nutrition focus, exercise guidance, recommended tests, and warning signs.
+- See a fruit-size comparison and summary cards for appointments, reminders, exercise, nutrition, and assistant access.
+- Calculate pregnancy dates from a last menstrual period or clinician-provided due date during onboarding.
 
-### 3. Voice Recognition Assistant
-- Built-in microphone with **Web Speech API** integration and spoken audio responses (`speechSynthesis`).
-- **Text-based Fallback**: Works on all devices even when microphone is unavailable.
-- Supported voice commands:
-  - *"Open safe exercises"*
-  - *"Show second trimester exercises"*
-  - *"Tell me the benefits of prenatal yoga"*
-  - *"Read the safety tips"*
-  - *"Go back to the dashboard"*
-  - *"Download the file"* (downloads exercise guide or full project code)
+### Pregnancy wellness and tracking
 
-### 4. Verified AI Nutrition Scanner & Food Composition Engine
-- Based on verified **ICMR-NIN Indian Food Composition Tables (IFCT)** and **USDA FoodData Central**.
-- Detailed macro and micronutrients essential for pregnancy: **Folate, Iron, Calcium, Protein, Dietary Fiber**.
+- Browse four gentle exercise routines: walking, prenatal yoga, swimming, and pelvic floor exercises.
+- Filter exercise guidance by trimester; view instructions, benefits, safety precautions, and downloadable guidance.
+- Record symptoms, severity, frequency, notes, and possible triggers.
+- Keep an exercise activity log.
+- Create and manage medication, supplement, and hydration reminders.
 
-### 5. Clinical Safety & Emergency SOS Protocol
-- High-priority SOS emergency button.
-- Real-time keyword triage (detects severe bleeding, severe abdominal pain, fluid leakage, visual disturbance).
-- Direct access to local maternity emergency triage (108 / 112) and nearest hospital maps.
+### Nutrition tools
 
-### 6. Multilingual Localization (5 Indian Languages)
-- English (`en`), Telugu (`te` — తెలుగు), Hindi (`hi` — हिन्दी), Tamil (`ta` — தமிழ்), Kannada (`kn` — ಕನ್ನಡ).
+- Search a built-in food composition dataset for common foods and Indian dishes.
+- Calculate serving-based calories, macronutrients, and selected micronutrients, including protein, carbohydrates, fat, fiber, folate, iron, calcium, and vitamin C.
+- Review pregnancy food-safety guidance and preparation notes where available.
+- Add foods to a daily diary and review intake summaries and trends.
+- The food dataset records its stated references (including ICMR-NIN and USDA sources); values are informational and should be checked with a clinician or dietitian for individual needs.
 
----
+### AI and voice assistants
 
-## 🚀 Quick Start Guide
+- Ask pregnancy and wellness questions through the assistant page.
+- Use built-in emergency keyword checks and educational local responses.
+- Optionally configure a Gemini or OpenAI provider for live responses.
+- Open the voice assistant to use supported browser speech recognition, spoken responses, and typed commands when speech services are unavailable.
+- Choose from available voice personas and try navigation-related voice commands.
 
-### Prerequisites
-- Node.js (v18.0.0 or higher recommended)
-- npm or yarn
+### Emergency support
 
-### 1. Installation
+- Open the emergency support modal from the SOS controls.
+- Review urgent warning information and quick actions to call emergency services or a clinician.
+- Configure emergency contact details and use supported location-sharing actions.
+- The SOS interface is a convenience feature, not a substitute for emergency services or clinical triage.
+
+### Personal records and appointments
+
+- Maintain a medical history with conditions, allergies, and notes.
+- Add and track antenatal appointments, including visit type, clinician, location, questions, and instructions.
+- Manage medical document records and review document previews or extracted summaries where available.
+- Configure profile, pregnancy, dietary, language, emergency-contact, and AI-provider preferences.
+
+### Demo profiles and language support
+
+- Explore three sample pregnancy profiles and switch between them using the sister switcher.
+- Switch the interface among English, Telugu, Hindi, Tamil, and Kannada.
+- The language selection is saved in browser storage. Translated strings are supplied by the locale files and shared-copy dictionary; untranslated text falls back to its original English.
+
+## Application routes
+
+| Route | Page |
+| --- | --- |
+| `/` | Landing page |
+| `/login` | Sign in |
+| `/signup` | Create an account |
+| `/onboarding` | Pregnancy and profile setup |
+| `/dashboard` | Pregnancy dashboard |
+| `/exercise` | Exercise and wellness |
+| `/nutrition` | Food scanner and safety information |
+| `/food-diary` | Food diary |
+| `/symptoms` | Symptom tracker |
+| `/appointments` | Antenatal appointments |
+| `/reminders` | Reminders |
+| `/assistant` | Pregnancy assistant |
+| `/medical-history` | Medical history |
+| `/medical-history/documents` | Medical documents |
+| `/settings` | Profile and app settings |
+
+## Technology
+
+- React 19, TypeScript, and Vite
+- React Router for navigation
+- Tailwind CSS for styling
+- i18next and react-i18next for language resources
+- Recharts for dashboard charts
+- Supabase JavaScript client and a PostgreSQL schema for optional backend integration
+- Vitest for automated tests
+
+## Run locally
+
+### Requirements
+
+- Node.js (use a current LTS release)
+- npm
+
+### Install dependencies and start the development server
+
 ```bash
 npm install
-```
-
-### 2. Run Local Development Server
-```bash
 npm run dev
 ```
-Open your browser at `http://localhost:5173/`.
 
-### 3. Run Automated Tests
+Open the local URL printed by Vite (usually `http://localhost:5173`).
+
+### Available scripts
+
 ```bash
-npm test
+npm run dev     # Start the Vite development server
+npm run build   # Type-check and build for production
+npm run preview # Preview the production build locally
+npm test        # Run the Vitest suite
+npm run lint    # Run Oxlint
 ```
 
-### 4. Production Build
-```bash
-npm run build
+## Demo data, storage, and integrations
+
+- The app initializes with sample sister accounts and records. In the current demo, profile and tracking data are persisted in the browser's `localStorage`; they are not automatically synchronized to a server.
+- `supabase_schema.sql` contains a PostgreSQL schema for a possible Supabase-backed deployment. `src/services/supabaseClient.ts` initializes the client when `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are provided. Configure and integrate authentication, storage, and data operations before treating the app as a connected production service.
+- The assistant supports optional provider API keys in app settings. Requests are made from the browser in this implementation. Do not use a private production API key in a public client-side deployment; route provider requests through a secured server-side endpoint instead.
+- Browser speech recognition and speech synthesis support depends on the browser, device, permissions, and network.
+
+## Project structure
+
+```text
+src/
+├── __tests__/       # Vitest tests
+├── assets/          # Images and static assets
+├── components/      # Navigation, layout, dialogs, and shared UI
+├── context/         # App state and demo data persistence
+├── data/            # Exercise, food, milestone, and demo-profile data
+├── locales/         # English, Telugu, Hindi, Tamil, Kannada, and shared copy
+├── pages/           # Route-level screens
+├── services/        # AI, Supabase client, and voice assistant services
+├── types/           # Shared TypeScript types
+└── utils/           # Pregnancy date calculations and helpers
 ```
 
----
+## Database schema
 
-## 📁 Project Structure
-
-```
-mom-journey-ai/
-├── public/                 # Static assets (favicons, SVG icons, project zip)
-├── src/
-│   ├── __tests__/          # Automated unit tests (Vitest)
-│   ├── components/         # Reusable UI components
-│   │   ├── AppLayout.tsx   # Shell layout with sidebar, header & floating bar
-│   │   ├── Navbar.tsx      # Header bar with SOS, Voice trigger, language picker
-│   │   ├── BottomNav.tsx   # Mobile responsive navigation bar
-│   │   ├── EmergencyModal.tsx # Clinical triage protocol modal
-│   │   └── VoiceAssistantModal.tsx # Web Speech API voice assistant
-│   ├── data/               # Medical, exercise & nutritional datasets
-│   │   ├── exerciseRoutines.ts # 4 exercises, safety tips, guide generator
-│   │   ├── foodCompositionDatabase.ts # ICMR-NIN & USDA nutritional tables
-│   │   └── indianLanguages.ts # Multilingual dictionary & i18n
-│   ├── pages/              # Application views
-│   │   ├── DashboardPage.tsx   # Modern card dashboard
-│   │   ├── ExercisePage.tsx    # Safe exercises, trimester filters & guides
-│   │   ├── NutritionScannerPage.tsx # AI Food Scanner
-│   │   ├── FoodDiaryPage.tsx   # Daily intake tracking
-│   │   ├── SymptomTrackerPage.tsx # Clinical symptom logging & triage
-│   │   ├── AppointmentsPage.tsx # Doctor visit schedule
-│   │   ├── RemindersPage.tsx   # Medication & hydration reminders
-│   │   ├── AssistantPage.tsx   # Mom Journey AI chat
-│   │   ├── MedicalHistoryPage.tsx # Health records
-│   │   └── SettingsPage.tsx    # User profile & language preferences
-│   ├── services/           # Voice recognition & business logic
-│   │   └── voiceAssistant.ts
-│   ├── App.tsx             # Route definitions
-│   ├── main.tsx            # App root
-│   └── index.css           # Design tokens, gradients & animations
-├── supabase_schema.sql     # PostgreSQL database schema with Row Level Security
-├── tailwind.config.js      # Custom theme, colors (bloom, sage, cream)
-├── vite.config.ts          # Vite configuration
-└── package.json            # Project dependencies and scripts
-```
-
----
-
-## 🛡️ Database & Security Architecture
-- Full PostgreSQL schema in [`supabase_schema.sql`](supabase_schema.sql).
-- Implements strict **Row Level Security (RLS)** ensuring medical records, symptom logs, and appointments are strictly private to each user.
-
----
-
-## 📄 License
-MIT License. Built for maternal wellness and healthy outcomes.
+The optional Supabase/PostgreSQL schema is in [`supabase_schema.sql`](./supabase_schema.sql). Review and adapt its policies, authentication setup, and deployment configuration for your environment before using real personal or health information.

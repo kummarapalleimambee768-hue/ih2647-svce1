@@ -17,11 +17,12 @@ import {
   Globe,
   Download
 } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const LandingPage: React.FC = () => {
   const { t } = useTranslation();
 
-  return (
+  return <LocalizedCopy>{((
     <div className="min-h-screen bg-[#FFFDF9] text-slate-900 selection:bg-bloom-100 selection:text-bloom-800">
       {/* Top Header */}
       <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -214,5 +215,5 @@ export const LandingPage: React.FC = () => {
         </div>
       </footer>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

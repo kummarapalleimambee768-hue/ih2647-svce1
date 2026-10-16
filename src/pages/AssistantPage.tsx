@@ -15,6 +15,7 @@ import {
   Info
 } from 'lucide-react';
 import { EmergencyModal } from '../components/EmergencyModal';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 interface Message {
   id: string;
@@ -140,7 +141,7 @@ How may I support your wellness today? You can ask about trimester nutrition, ma
     ]);
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="h-[calc(100vh-130px)] flex flex-col bg-white rounded-3xl border border-slate-200/80 shadow-soft overflow-hidden animate-fadeIn">
       {/* Chat Header */}
       <div className="p-4 border-b border-slate-100 bg-cream-50/70 flex items-center justify-between">
@@ -307,5 +308,5 @@ How may I support your wellness today? You can ask about trimester nutrition, ma
         onClose={() => setEmergencyModalOpen(false)}
       />
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

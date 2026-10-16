@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useApp } from '../context/AppContext';
 import { Heart, Mail, Lock, User, ArrowRight } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const SignupPage: React.FC = () => {
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ export const SignupPage: React.FC = () => {
     }
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="min-h-screen bg-gradient-to-b from-bloom-50/50 via-[#FFFDF9] to-lavender-50/40 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <Link to="/" className="inline-flex items-center gap-2 mb-4 group">
@@ -133,5 +134,5 @@ export const SignupPage: React.FC = () => {
         </div>
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

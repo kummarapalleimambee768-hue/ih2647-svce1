@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
 import { Users, Sparkles, Check } from 'lucide-react';
+import { LocalizedCopy } from './LocalizedCopy';
 
 export const SisterSwitcher: React.FC = () => {
   const { allSistersData, activeSisterKey, switchSisterAccount } = useApp();
@@ -11,7 +12,7 @@ export const SisterSwitcher: React.FC = () => {
     { key: 'sister-3-meera', name: 'Meera', role: 'Sister 3', week: 34, trimester: 3, color: 'bg-sage-100 text-sage-800 border-sage-300' },
   ];
 
-  return (
+  return <LocalizedCopy>{((
     <div className="bg-white/80 backdrop-blur-md rounded-2xl p-2 sm:p-2.5 border border-bloom-100 shadow-sm flex items-center justify-between gap-2 overflow-x-auto">
       <div className="flex items-center gap-2 pl-2">
         <div className="w-8 h-8 rounded-full bg-bloom-100 flex items-center justify-center text-bloom-600">
@@ -58,5 +59,5 @@ export const SisterSwitcher: React.FC = () => {
         })}
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

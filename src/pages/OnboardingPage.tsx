@@ -16,6 +16,7 @@ import {
   Apple,
   AlertCircle
 } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const OnboardingPage: React.FC = () => {
   const { t } = useTranslation();
@@ -70,7 +71,7 @@ export const OnboardingPage: React.FC = () => {
     navigate('/dashboard');
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="min-h-screen bg-gradient-to-b from-cream-50 via-white to-bloom-50/30 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
@@ -353,5 +354,5 @@ export const OnboardingPage: React.FC = () => {
         </form>
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

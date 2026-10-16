@@ -19,6 +19,7 @@ import {
   Mic,
   Sparkles
 } from 'lucide-react';
+import { LocalizedCopy } from './LocalizedCopy';
 
 export const AppLayout: React.FC = () => {
   const { t } = useTranslation();
@@ -42,10 +43,10 @@ export const AppLayout: React.FC = () => {
   const isAuthPage = location.pathname === '/login' || location.pathname === '/signup' || location.pathname === '/';
 
   if (isAuthPage) {
-    return <Outlet />;
+    return <LocalizedCopy>{(<Outlet />)}</LocalizedCopy>;
   }
 
-  return (
+  return <LocalizedCopy>{((
     <div className="min-h-screen bg-[#FFFDF9] flex flex-col text-slate-800">
       <Navbar />
 
@@ -111,5 +112,5 @@ export const AppLayout: React.FC = () => {
       <BottomNav />
       <VoiceAssistantModal isOpen={voiceOpen} onClose={() => setVoiceOpen(false)} />
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

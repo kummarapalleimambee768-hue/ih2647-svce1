@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   AlertTriangle
 } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const SettingsPage: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -63,7 +64,7 @@ export const SettingsPage: React.FC = () => {
     a.click();
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 max-w-4xl mx-auto animate-fadeIn">
       {/* Title */}
       <div>
@@ -250,5 +251,5 @@ export const SettingsPage: React.FC = () => {
         </div>
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

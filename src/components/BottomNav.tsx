@@ -3,12 +3,13 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Activity, Dumbbell, Apple, HeartPulse, Mic } from 'lucide-react';
 import { VoiceAssistantModal } from './VoiceAssistantModal';
+import { LocalizedCopy } from './LocalizedCopy';
 
 export const BottomNav: React.FC = () => {
   const { t } = useTranslation();
   const [voiceOpen, setVoiceOpen] = useState(false);
 
-  return (
+  return <LocalizedCopy>{((
     <>
       <nav className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/80 px-2 py-1.5 md:hidden shadow-lg">
         <div className="flex items-center justify-around max-w-md mx-auto">
@@ -86,5 +87,5 @@ export const BottomNav: React.FC = () => {
 
       <VoiceAssistantModal isOpen={voiceOpen} onClose={() => setVoiceOpen(false)} />
     </>
-  );
+  ))}</LocalizedCopy>;
 };

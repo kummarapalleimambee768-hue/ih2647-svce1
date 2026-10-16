@@ -5,6 +5,7 @@ import { useApp } from '../context/AppContext';
 import { Heart, Mail, Lock, ArrowRight, Sparkles, UserCheck, Mic, Volume2 } from 'lucide-react';
 import { LanguageSelector } from '../components/LanguageSelector';
 import { VoiceAssistantModal } from '../components/VoiceAssistantModal';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const LoginPage: React.FC = () => {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ export const LoginPage: React.FC = () => {
     navigate('/dashboard');
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="min-h-screen bg-gradient-to-b from-bloom-50/50 via-[#FFFDF9] to-lavender-50/40 flex flex-col justify-center py-10 px-4 sm:px-6 lg:px-8 relative">
       {/* Top Bar with Language Selector and Voice Assistant Button */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2.5 z-10">
@@ -191,6 +192,6 @@ export const LoginPage: React.FC = () => {
       {/* Voice Assistant Modal */}
       <VoiceAssistantModal isOpen={isVoiceOpen} onClose={() => setIsVoiceOpen(false)} />
     </div>
-  );
+  ))}</LocalizedCopy>;
 };
 

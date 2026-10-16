@@ -32,6 +32,7 @@ import {
   setStoredVoicePersona,
   getSpeechRecognitionLang
 } from '../services/voiceAssistant';
+import { LocalizedCopy } from './LocalizedCopy';
 
 interface VoiceAssistantModalProps {
   isOpen: boolean;
@@ -224,7 +225,7 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({ isOpen
 
   if (!isOpen) return null;
 
-  return (
+  return <LocalizedCopy>{((
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/65 backdrop-blur-sm animate-fadeIn">
       <div className="bg-white rounded-3xl max-w-lg w-full p-5 sm:p-6 shadow-2xl border border-bloom-100 relative overflow-hidden flex flex-col max-h-[92vh]">
         {/* Decorative Top Accent */}
@@ -474,6 +475,6 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({ isOpen
         </div>
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };
 

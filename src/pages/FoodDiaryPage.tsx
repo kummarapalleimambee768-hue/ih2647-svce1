@@ -21,6 +21,7 @@ import {
   Tooltip,
   CartesianGrid
 } from 'recharts';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const FoodDiaryPage: React.FC = () => {
   const { t } = useTranslation();
@@ -49,7 +50,7 @@ export const FoodDiaryPage: React.FC = () => {
     { day: 'Today', calories: totalCalories > 0 ? totalCalories : 2100, protein: totalProtein > 0 ? totalProtein : 68 },
   ];
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 animate-fadeIn">
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -202,5 +203,5 @@ export const FoodDiaryPage: React.FC = () => {
         )}
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

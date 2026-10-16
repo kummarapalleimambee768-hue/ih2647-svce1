@@ -17,6 +17,7 @@ import {
   RotateCcw
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { LocalizedCopy } from './LocalizedCopy';
 
 interface EmergencyModalProps {
   isOpen: boolean;
@@ -189,7 +190,7 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
 
   if (!isOpen) return null;
 
-  return (
+  return <LocalizedCopy>{((
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/75 backdrop-blur-sm animate-fadeIn overflow-y-auto">
       <div className="bg-white rounded-3xl max-w-xl w-full p-5 sm:p-6 shadow-2xl border-2 border-red-300 relative overflow-hidden my-auto max-h-[92vh] flex flex-col">
         {/* Top warning ribbon */}
@@ -550,6 +551,6 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
         </div>
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };
 

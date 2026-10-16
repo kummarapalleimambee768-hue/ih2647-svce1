@@ -12,6 +12,7 @@ import {
   Heart,
   Calendar
 } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const RemindersPage: React.FC = () => {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ export const RemindersPage: React.FC = () => {
     setReminderTime('09:00');
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 animate-fadeIn">
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -207,5 +208,5 @@ export const RemindersPage: React.FC = () => {
         )}
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

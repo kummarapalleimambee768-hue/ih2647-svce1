@@ -25,6 +25,7 @@ import {
   Droplet
 } from 'lucide-react';
 import { VoiceAssistantModal } from '../components/VoiceAssistantModal';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const DashboardPage: React.FC = () => {
   const { t } = useTranslation();
@@ -50,7 +51,7 @@ export const DashboardPage: React.FC = () => {
 
   const nextAppointment = appointments.find((a) => !a.isCompleted) || appointments[0];
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 animate-fadeIn max-w-6xl mx-auto">
       {/* 1. Hero Pregnancy Status Card */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-bloom-500 via-rose-500 to-lavender-600 text-white p-6 sm:p-8 shadow-elevated">
@@ -407,5 +408,5 @@ export const DashboardPage: React.FC = () => {
         onClose={() => setVoiceModalOpen(false)}
       />
     </div>
-  );
+  ))}</LocalizedCopy>;
 };

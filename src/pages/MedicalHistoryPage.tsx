@@ -14,6 +14,7 @@ import {
   FileText,
   AlertCircle
 } from 'lucide-react';
+import { LocalizedCopy } from '../components/LocalizedCopy';
 
 export const MedicalHistoryPage: React.FC = () => {
   const { t } = useTranslation();
@@ -56,7 +57,7 @@ export const MedicalHistoryPage: React.FC = () => {
     setClinicianNotes('');
   };
 
-  return (
+  return <LocalizedCopy>{((
     <div className="space-y-6 animate-fadeIn">
       {/* Title & Quick Link to Documents */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -294,5 +295,5 @@ export const MedicalHistoryPage: React.FC = () => {
         )}
       </div>
     </div>
-  );
+  ))}</LocalizedCopy>;
 };
