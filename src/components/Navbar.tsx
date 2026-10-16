@@ -19,8 +19,7 @@ import {
   MessageCircleQuestion,
   FileText,
   Clock,
-  Mic,
-  Download
+  Mic
 } from 'lucide-react';
 import { LocalizedCopy } from './LocalizedCopy';
 
@@ -128,17 +127,6 @@ export const Navbar: React.FC = () => {
 
             {/* Actions: Voice Mic, Emergency SOS, Language, Profile */}
             <div className="flex items-center gap-2 sm:gap-3">
-              {/* Download Project ZIP Button */}
-              <a
-                href="/mom-journey-ai-full-project.zip"
-                download="mom-journey-ai-full-project.zip"
-                className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-bold text-xs transition-all transform hover:scale-105 active:scale-95"
-                title="Download Complete Project ZIP Archive"
-              >
-                <Download className="w-3.5 h-3.5 text-slate-700" />
-                <span>Download Code (.ZIP)</span>
-              </a>
-
               {/* Voice Command Button */}
               <button
                 onClick={() => setVoiceOpen(true)}
@@ -212,16 +200,6 @@ export const Navbar: React.FC = () => {
             </div>
 
             <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
-              <a
-                href="/mom-journey-ai-full-project.zip"
-                download="mom-journey-ai-full-project.zip"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 text-slate-800 font-bold text-xs hover:bg-slate-100 border border-slate-200"
-              >
-                <Download className="w-4 h-4 text-bloom-600" />
-                <span>Download Whole Project (.ZIP)</span>
-              </a>
-
               <div className="flex items-center justify-between pt-1">
                 <Link
                   to="/settings"

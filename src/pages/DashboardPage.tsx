@@ -21,7 +21,6 @@ import {
   Mic,
   UtensilsCrossed,
   MessageCircle,
-  Download,
   Droplet
 } from 'lucide-react';
 import { VoiceAssistantModal } from '../components/VoiceAssistantModal';
@@ -91,15 +90,6 @@ export const DashboardPage: React.FC = () => {
                 <span>{t('voice.title', 'Voice Command')}</span>
               </button>
 
-              <a
-                href="/mom-journey-ai-full-project.zip"
-                download="mom-journey-ai-full-project.zip"
-                className="px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white font-bold text-xs transition-colors flex items-center gap-1.5 shadow-sm"
-                title="Download entire project code zipfile"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span>Download Project (.ZIP)</span>
-              </a>
             </div>
           </div>
 

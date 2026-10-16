@@ -129,11 +129,11 @@ describe('3. Voice Assistant Commands Interpretation', () => {
     expect(res.downloadTriggered).toBe(true);
   });
 
-  it('interprets "download the whole project code zipfile" command', () => {
+  it('does not offer a project ZIP download', () => {
     const res = processVoiceCommand('download the whole project code zipfile');
-    expect(res.action).toBe('DOWNLOAD_FILE');
-    expect(res.downloadTriggered).toBe(true);
-    expect(res.spokenResponse).toContain('project code zip file');
+    expect(res.action).toBe('UNKNOWN');
+    expect(res.downloadTriggered).toBeUndefined();
+    expect(res.spokenResponse).not.toContain('project code zip');
   });
 });
 
@@ -244,4 +244,3 @@ describe('7. Voice Login, Multilingual Recognition & Voice Personas', () => {
     expect(VOICE_PERSONAS.calm.name).toContain('Zen Relaxation');
   });
 });
-

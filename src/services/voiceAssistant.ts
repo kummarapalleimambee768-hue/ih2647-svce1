@@ -173,7 +173,6 @@ export function processVoiceCommand(input: string, langCode: string = 'en'): Voi
     };
   }
 
-  // 2. Download project code zip command
   if (
     query.includes('zip') ||
     query.includes('project code') ||
@@ -185,15 +184,13 @@ export function processVoiceCommand(input: string, langCode: string = 'en'): Voi
     query.includes('ஜிப்') ||
     query.includes('కోడ్')
   ) {
-    triggerProjectZipDownload();
     return {
-      action: 'DOWNLOAD_FILE',
-      spokenResponse: 'Downloading the complete Mom Journey AI project code zip file with all source components, database schema, and assets.',
-      downloadTriggered: true,
+      action: 'UNKNOWN',
+      spokenResponse: 'Project ZIP downloads are not available here. You can download the safe exercise guide instead.',
     };
   }
 
-  // 3. Download exercise guide / general file
+  // 2. Download exercise guide
   if (
     query.includes('download') ||
     query.includes('save file') ||
@@ -203,15 +200,14 @@ export function processVoiceCommand(input: string, langCode: string = 'en'): Voi
     query.includes('பதிவிறக்கு')
   ) {
     triggerFileDownload();
-    triggerProjectZipDownload();
     return {
       action: 'DOWNLOAD_FILE',
-      spokenResponse: 'Downloading the complete Pregnancy Safe Exercises and Wellness Guide as well as the full project zip archive for you now.',
+      spokenResponse: 'Downloading the Pregnancy Safe Exercises and Wellness Guide for you now.',
       downloadTriggered: true,
     };
   }
 
-  // 4. Trimester-specific exercises command
+  // 3. Trimester-specific exercises command
   if (
     query.includes('second trimester') ||
     query.includes('trimester 2') ||
@@ -254,7 +250,7 @@ export function processVoiceCommand(input: string, langCode: string = 'en'): Voi
     };
   }
 
-  // 5. Open safe exercises generic command
+  // 4. Open safe exercises generic command
   if (
     query.includes('safe exercises') ||
     query.includes('open exercise') ||
@@ -274,7 +270,7 @@ export function processVoiceCommand(input: string, langCode: string = 'en'): Voi
     };
   }
 
-  // 6. Read safety tips command
+  // 5. Read safety tips command
   if (
     query.includes('safety tip') ||
     query.includes('read safety') ||
@@ -386,7 +382,7 @@ export function processVoiceCommand(input: string, langCode: string = 'en'): Voi
   // Fallback
   return {
     action: 'UNKNOWN',
-    spokenResponse: `I heard: "${input}". Try saying "Log in as Ananya", "Open safe exercises", "Show second trimester exercises", "Tell me the benefits of prenatal yoga", "Read safety tips", or "Download project code zip".`,
+    spokenResponse: `I heard: "${input}". Try saying "Log in as Ananya", "Open safe exercises", "Show second trimester exercises", "Tell me the benefits of prenatal yoga", "Read safety tips", or "Download the safe exercise guide".`,
   };
 }
 
@@ -402,16 +398,6 @@ export function triggerFileDownload(): void {
   anchor.click();
   document.body.removeChild(anchor);
   URL.revokeObjectURL(url);
-}
-
-export function triggerProjectZipDownload(): void {
-  if (typeof document === 'undefined') return;
-  const anchor = document.createElement('a');
-  anchor.href = '/mom-journey-ai-full-project.zip';
-  anchor.download = 'mom-journey-ai-full-project.zip';
-  document.body.appendChild(anchor);
-  anchor.click();
-  document.body.removeChild(anchor);
 }
 
 export function speakText(
@@ -459,4 +445,3 @@ export function speakText(
     console.warn('Speech synthesis error:', err);
   }
 }
-

@@ -10,7 +10,6 @@ import {
   X,
   Send,
   Sparkles,
-  Download,
   Activity,
   Heart,
   CheckCircle2,
@@ -24,7 +23,6 @@ import {
   processVoiceCommand,
   speakText,
   triggerFileDownload,
-  triggerProjectZipDownload,
   VoiceCommandResult,
   VOICE_PERSONAS,
   VoicePersonaId,
@@ -218,7 +216,7 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({ isOpen
     'Tell me the benefits of prenatal yoga.',
     'Read the safety tips.',
     'Go back to the dashboard.',
-    'Download whole project zip.',
+    'Download the safe exercise guide.',
     'अनन्या लॉगिन',
     'एक्सरसाइज खोलो',
   ];
@@ -416,17 +414,6 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({ isOpen
                 </div>
               )}
 
-              {lastResult.downloadTriggered && (
-                <div className="pt-2 flex justify-center">
-                  <button
-                    onClick={triggerProjectZipDownload}
-                    className="px-4 py-1.5 rounded-xl bg-bloom-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm"
-                  >
-                    <Download className="w-3.5 h-3.5" />
-                    <span>Download Project ZIP Archive</span>
-                  </button>
-                </div>
-              )}
             </div>
           )}
 
@@ -477,4 +464,3 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({ isOpen
     </div>
   ))}</LocalizedCopy>;
 };
-
